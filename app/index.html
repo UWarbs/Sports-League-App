@@ -5,17 +5,22 @@
 	<style type="text/css" src="main.css"></style>
 	<script type="text/javascript" src="app.js"></script>
 </head>
-<body ng-controller="StandingController as standing">
+<body>
 	<h1 id="title"><img src=""/>PING PONG STANDINGS</h1>
-
+<div ng-controller="StandingController">
 	<table border="1" bordercolor="#476866" style="background-color:#fff1cc" width="70%" cellpadding="3" cellspacing="3" margin-left="auto" margin-right="auto">
-		<tr ng-repeat="player in standing.players">
-			<td class = "playerName"><strong>{{player.name}}</strong></td>
-			<td class = "wins" text-align="center">{{player.wins}}</td>
-			<td class = "losses" text-align="center">{{player.losses}}</td>
+		
+		<tr ng-repeat="(name, record) in players | orderBy: orderProp">
+			<td class = "playerName" >
+			<button ng-click="addWin(name)">WIN</button>
+			<button ng-click="addLoss(name)">LOSS</button>
+			<strong>{{name}}</strong>
+			</td>
+			<td class = "wins" text-align="center">{{record.wins}}</td>
+			<td class = "losses" text-align="center">{{record.losses}}</td>
 		</tr>
 	</table>
-
+</div>
 
 
 </body>
