@@ -4,7 +4,9 @@ var mongoose = require('mongoose');
 var consolidate = require('consolidate');
 var bodyParser = require('body-parser');
 
-//var playerStats = require('path to that db');
+//var players = require('./api/routes/playerRoute');
+
+//mongoose.connect('mongodb://localhost/players');
 
 var app = express();
 //app.engine('angular', consolidate.angular); //Don't kow what this does
@@ -15,6 +17,8 @@ app.set('port', process.env.PORT || 3000);
 app.get('/', function(req, res, next){
 	res.send("Kyle");
 });
+
+//app.get('/api/v1/:name', players.playerData);
 
 
 
