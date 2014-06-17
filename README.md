@@ -1,8 +1,8 @@
 ##Ping Pong Standings
 
-This is a single-page web app that keeps track of ping pong wins/losses.
+This will be a single-page web app that keeps track of wins and losses, leagues, and other interesting statistics. It will allow a user to create and edit leagues.
 
-It is made using the MEAN stack, or at least it will be when finished.
+It is made using the MEAN stack.
 
 I am thinking of extending the functionality past ping pong.
 
