@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var consolidate = require('consolidate');
 var bodyParser = require('body-parser');
 
-var pongRoutes = require('./api/routes/playerRoute.js');
+var pongRoutes = require('./api/routes/playerRoute');
 
 mongoose.connect('mongodb://localhost/players');
 
@@ -19,9 +19,9 @@ app.set('port', process.env.PORT || 3000);
 
 //app.post('/api/v1/add-user', file);
 //app.post('/api/v1/add-game', file);
-app.get('/api/v1/standings', pongRoutes.standings);
-
-app.get('/api/v1/match-history/:username', pongRoutes.matchHistory);
+app.get('./api/match-history/:username', pongRoutes.matchHistory);
+require('./api/routes/playerCreate')(app); //Player creater
+require('./api/routes/standingsRoute')(app); //Shows standings
 
 
 
