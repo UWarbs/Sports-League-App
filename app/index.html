@@ -2,23 +2,44 @@
 <html ng-app="pingPong">
 <head>
 	<title>Ping Pong</title>
-	<style type="text/css" src="main.css"></style>
-	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript" src="client.js"></script>
 </head>
 <body>
 	<h1 id="title"><img src=""/>PING PONG STANDINGS</h1>
-<div ng-controller="StandingController">
-	<table border="1" bordercolor="#476866" style="background-color:#fff1cc" width="70%" cellpadding="3" cellspacing="3" margin-left="20%" margin-right="auto">
-		
-		<tr ng-repeat="(name, record) in players | orderBy: orderProp">
-			<td class = "playerName" >
-			<button ng-click="addWin(name)">WIN</button>
-			<button ng-click="addLoss(name)">LOSS</button>
-			<strong>{{name}}</strong>
-			</td>
-			<td class = "wins" text-align="center">{{record.wins}}</td>
-			<td class = "losses" text-align="center">{{record.losses}}</td>
+	<a href="api/standings">Standings</a>
+<div ng-controller="PlayerController">
+	<form ng-submit="savePlayer()">
+	<label>Name</label>
+		<input type="text" name="name" ng-model="newplayer.name">
+	<label>Wins</label>	
+		<input type="text" name="wins" ng-model="newplayer.wins">
+	<label>Losses</label>	
+		<input type="text" name="losses" ng-model="newplayer.losses"></br>
+		<input type="hidden" name="id" value="1" ng-model="newplayer.id"/>
+		<input type="submit" value="Save"/>
+	</form>
+
+
+	<table>
+		<thead>
+		<tr>
+			<th>Name</th>
+			<th>Wins</th>
+			<th>Losses</th>
+			<th>Action</th>
 		</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="player in players">
+				<td class = "wins">{{player.wins}}</td>
+				<td class = "losses">{{player.losses}}</td>
+				<td>
+					<a href="#" ng-click="edit(player.id)">edit</a>
+					<a href="#" ng-click="delete(player.id)">delete</a>
+				</td>
+			</tr>
+		</tbody>
 	</table>
 </div>
 
