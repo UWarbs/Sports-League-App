@@ -27,7 +27,7 @@ module.exports = function (grunt) {
                 dest: 'dist/client.js'
             },
             test: {
-                src: ['test/front-end/unit/**/*.js'],
+                src: ['tests/superagent.js'],
                 dest: 'test/front-end/test-suite.js',
             },
             options: {
@@ -86,6 +86,15 @@ module.exports = function (grunt) {
             },
         },
 
+        mochaTest:{
+            all:{
+                options:{
+                    reporter: 'spec'
+                },
+             src: ['tests/superagent.js']   
+            }
+        },
+
         casper : {
          acceptance : {
             options : {
@@ -102,7 +111,7 @@ module.exports = function (grunt) {
     
     grunt.registerTask('server', ['jshint', 'express:dev', 'build', 'watch']);
     grunt.registerTask('serve', ['server']);
-    grunt.registerTask('test', ['jshint', 'browserify:test', 'express:dev', 'casper:acceptance']);
+    grunt.registerTask('test', ['jshint', 'mochaTest']);
     grunt.registerTask('build', ['clean', 'copy', 'browserify:standalone']);
 
 };
