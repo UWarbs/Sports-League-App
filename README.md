@@ -11,3 +11,5 @@ I am thinking of extending the functionality past ping pong.
 A user will be able to login and add a league, see his leagues, see standings, and maybe even schedules games.
 
 An admin user will be able to use the 'game' form to add games that have been played which will update standings and individual player stats.
+
+##Ignore how it looks for now 
