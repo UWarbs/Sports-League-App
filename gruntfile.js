@@ -14,7 +14,7 @@ module.exports = function (grunt) {
             all: {
                 expand: true,
                 cwd: 'app/',
-                src: ['css/*.css', '*.html', '*.js', 'images/**/*', '!Gruntfile.js'],
+                src: ['css/*.css', '*.html', 'images/**/*', '!Gruntfile.js'],
                 dest: 'dist/',
                 flatten: true,
                 filter: 'isFile'
@@ -23,7 +23,7 @@ module.exports = function (grunt) {
 
         browserify: {
             standalone: {
-                src: 'app/js/**/*.js',
+                src: 'app/**/*.js',
                 dest: 'dist/client.js'
             },
             test: {
@@ -74,7 +74,7 @@ module.exports = function (grunt) {
           options: {
             jshintrc: true
           },
-          all: ['server.js', 'app/js/*.js']
+          all: ['server.js', 'app/**/*.js']
         },
 
         express: {
