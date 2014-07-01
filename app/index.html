@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h1 id="title"><img src=""/>PING PONG STANDINGS</h1>
-	<a href="api/standings">Standings</a>
+	<a href="/standings">Standings</a>
 <div ng-controller="PlayerController">
 	<form ng-submit="savePlayer()">
 	<label>Name</label>
@@ -42,6 +42,7 @@
 		</tbody>
 	</table>
 </div>
+<div ng-view></div>
 
 
 </body>

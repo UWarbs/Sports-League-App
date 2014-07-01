@@ -1,15 +1,16 @@
-var angular = require('angular');
+require('angular');
 var standing = require('./modules/standings/standings-module.js');
 
-(function(){
-	var sportApp = angular.module('sportApp', ['ngRoute', 'ngResource', standing.name]); 
-	
-	sportApp.config(['$routeProvider', function($routeProvider){
-		$routeProvider.when('/standings', {
+
+var mainApp = angular.module('mainApp', ['ngRoute', 'ngResource', standing.name]); 
+
+mainApp.config(['$routeProvider', function($routeProvider){
+	$routeProvider
+		.when('/standings', {
 			templateUrl:'templates/standingAll.html',
 			controller: 'standingsDisplayCtrl'
 		});
-	}]);
+}]);
 	
 
 
@@ -81,7 +82,7 @@ var standing = require('./modules/standings/standings-module.js');
 	});*/
 
 
-})();
+
 
 //when updating wins/losses, need to do a db.players.update({name: "playerName"}, {$inc: {wins: 1}})
 //automatically creates "win" field in database if none exists
