@@ -1,5 +1,6 @@
 ##Sports League App
-=========
+
+
 Step one: Think up a better name.
 
 This will be a single-page web app that keeps track of wins and losses, leagues, and other interesting statistics. It will allow a user to create and edit leagues. Also, a user will be able to see all their statistics visualized as graphs, pie charts, etc.
