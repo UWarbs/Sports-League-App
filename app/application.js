@@ -53,7 +53,7 @@ mainApp.config(['$routeProvider', function($routeProvider){
 					players.splice(i, 1);
 				}
 			}
-		}; //this.delete
+		}; 
 
 		//returns contact list
 		this.list = function(){

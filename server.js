@@ -7,7 +7,7 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var RedisStore = require('connect-redis')(session);
 
-var pongRoutes = require('./api/routes/playerRoute');
+var pongRoutes = require('./api/routes/matchHistory');
 
 mongoose.connect('mongodb://localhost/players');
 
@@ -15,7 +15,7 @@ var app = express();
 var ttl = (1000 * 60 * 60 * 24 * 7);
 
 //app.engine('angular', consolidate.angular); //Don't kow what this does
-app.use(cookieParser('SECRETSTRING(CHANGETHIS)(foreman(download))()()()')); //EX: process.env.COOKIE_SECRET
+app.use(cookieParser('SECRETSTRING(CHANGETHIS)(foreman(download))')); //EX: process.env.COOKIE_SECRET
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist'));
 
