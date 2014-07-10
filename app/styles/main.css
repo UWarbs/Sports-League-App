@@ -1,0 +1,15 @@
+table {
+	border : 1;
+	bordercolor: #476866;
+	background-color: #fff1cc;
+	width: 80%; 
+	cellpadding: 3; 
+	cellspacing: 3;
+}
+  .signupForm input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+  }
+
+  .signupForm input.ng-valid.ng-dirty {
+    background-color: #78FA89;
+  }

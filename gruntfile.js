@@ -11,13 +11,23 @@ module.exports = function (grunt) {
         clean: ['dist'],
 
         copy: {
-            all: {
-                expand: true,
-                cwd: 'app/',
-                src: ['css/*.css', '*.html', 'images/**/*', '!Gruntfile.js'],
-                dest: 'dist/',
-                flatten: true,
-                filter: 'isFile'
+            main: {
+                files:[{
+                    expand: true,
+                    cwd: 'app/',
+                    src: ['css/*.css', '*.html'],
+                    dest: 'dist/',
+                    flatten: true,
+                    filter: 'isFile'
+                    },
+                    {
+                    expand: true,
+                    flatten: true,
+                    cwd:'app/',
+                    src:['templates/*'],
+                    dest:'dist/templates'
+                    }
+                ]
             }
         },
 
@@ -52,7 +62,7 @@ module.exports = function (grunt) {
             js: {
                 files: '<%= browserify.standalone.src %>',
                 tasks: ['jshint', 'browserify:standalone',
-                        'browserify:test', 'casper:acceptance']
+                'browserify:test', 'casper:acceptance']
             },
 
             testjs: {
@@ -73,45 +83,45 @@ module.exports = function (grunt) {
         jshint: {
           options: {
             jshintrc: true
-          },
-          all: ['server.js', 'app/**/*.js']
         },
+        all: ['server.js', 'app/**/*.js']
+    },
 
-        express: {
-            dev: {
-                options: {
-                    background: true,
-                    script: 'server.js'
-                }
-            },
-        },
-
-        mochaTest:{
-            all:{
-                options:{
-                    reporter: 'spec'
-                },
-             src: ['tests/superagent.js']   
+    express: {
+        dev: {
+            options: {
+                background: true,
+                script: 'server.js'
             }
         },
+    },
 
-        casper : {
-         acceptance : {
-            options : {
-              test : true
+    mochaTest:{
+        all:{
+            options:{
+                reporter: 'spec'
             },
-            files : {
-              'test/front-end/acceptance/casper-results.xml' :
-                    ['test/front-end/acceptance/main_page_test.js']
-            }
-          }
+            src: ['tests/superagent.js']   
         }
+    },
 
-    });
-    
-    grunt.registerTask('server', ['jshint', 'express:dev', 'build', 'watch']);
-    grunt.registerTask('serve', ['server']);
-    grunt.registerTask('test', ['jshint', 'mochaTest']);
-    grunt.registerTask('build', ['clean', 'copy', 'browserify:standalone']);
+    casper : {
+       acceptance : {
+        options : {
+          test : true
+      },
+      files : {
+          'test/front-end/acceptance/casper-results.xml' :
+          ['test/front-end/acceptance/main_page_test.js']
+      }
+  }
+}
+
+});
+
+grunt.registerTask('server', ['jshint', 'express:dev', 'build', 'watch']);
+grunt.registerTask('serve', ['server']);
+grunt.registerTask('test', ['jshint', 'mochaTest']);
+grunt.registerTask('build', ['clean', 'copy', 'browserify:standalone']);
 
 };

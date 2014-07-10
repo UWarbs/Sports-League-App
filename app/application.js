@@ -1,16 +1,33 @@
 require('angular');
+require('angular-route');
+require('angular-cookies');
+require('angular-base64');
 var standing = require('./modules/standings/standings-module.js');
 
 
-var mainApp = angular.module('mainApp', ['ngRoute', 'ngResource', standing.name]); 
+var mainApp = angular.module('mainApp', ['ngRoute', 'base64', 'ngCookies']); 
 
-mainApp.config(['$routeProvider', function($routeProvider){
-	$routeProvider
-		.when('/standings', {
-			templateUrl:'templates/standingAll.html',
-			controller: 'standingsDisplayCtrl'
-		});
-}]);
+//====CONTROLLERS=====
+require('./modules/login/LoginCtrl')(mainApp);
+
+
+mainApp.config(['$routeProvider', 
+	function($routeProvider){
+		$routeProvider
+			.when('/',{
+				templateUrl: 'templates/landing.html',
+				controller: 'LoginCtrl'
+			})
+			.when('/signup'.{
+				templateUrl: 'templates/signup.html',
+				controller: 'SignupCtrl'
+			})
+			.when('/standings', {
+				templateUrl:'templates/standingAll.html',
+				controller: 'StandingsDisplayCtrl'
+			});
+	}
+]);
 	
 
 

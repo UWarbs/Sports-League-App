@@ -11,17 +11,17 @@ describe('Player creator API', function() {
   it('can successfully create a new player', function(done) {
     superagent.post('http://localhost:3000/api/add-user')
       .send({
-        username: 'KillerKyle',
-        wins: 3,
-        losses: 4
+        username: 'Kyle',
+        email: 'kyle@example.com',
+        password: 'password'
       })
       .end(function(err, res) {
         expect(err).to.eql(null);
         expect(res.status).to.eql(200);
         expect(res.body._id).to.not.be.eql(null);
-        expect(res.body.username).to.be.eql('KillerKyle');
-        expect(res.body.wins).to.be.eql(3);
-        expect(res.body.losses).to.be.eql(4);
+        expect(res.body.username).to.be.eql('Kyle');
+        expect(res.body.basic.email).to.be.eql('kyle@example.com');
+        expect(res.body.basic.password).to.be.eql('password');
         id = res.body._id;
 
         done();
@@ -29,17 +29,16 @@ describe('Player creator API', function() {
   });
 
   //testing if we can see all the Player models in our standing
-  it('can successfully show you standings', function(done){
+  it('can successfully show you players', function(done){
     superagent.get('http://localhost:3000/api/standings')
     .end(function(err, res){
         console.log(res.body);
         id = res.body[0]._id;
         expect(err).to.eql(null);
         expect(res.body[0]._id).to.be.eql(id);
-        expect(res.body[0].username).to.be.eql('KillerKyle');
-        expect(res.body[0].wins).to.be.eql(3);
-        expect(res.body[0].losses).to.be.eql(4);
-
+        expect(res.body[0].username).to.be.eql('Kyle');
+        expect(res.body[0].basic.email).to.be.eql('kyle@example.com');
+        expect(res.body[0].basic.password).to.be.eql('password');
         done();
       })
   });

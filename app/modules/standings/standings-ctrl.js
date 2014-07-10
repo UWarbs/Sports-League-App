@@ -1,4 +1,4 @@
-module.exports.standingsInputCtrl = function($scope, $location, Standings){
+module.exports.StandingsInputCtrl = function($scope, $location, Standings){
 	
 	$scope.standingInput = new Standings({});
 
@@ -11,6 +11,6 @@ module.exports.standingsInputCtrl = function($scope, $location, Standings){
 
 };
 
-module.exports.standingsDisplayCtrl = function($scope, Standings){
+module.exports.StandingsDisplayCtrl = function($scope, Standings){
 	$scope.allStandings = Standings.getAll({});
 };
