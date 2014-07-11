@@ -1,9 +1,11 @@
-<h2> Please fill out the following field</h2>
-	<form class="signupForm" name="form" novalidate>
-		Username: <input type="text" ng-model="player.username" name="username" required/>
-		</br>
-		Email: <input type="email" ng-model="player.email" name="email" required/></br>
-		password: <input type="password" ng-model="player.password" name="password"/></br>
-		<button ng-click="save()" ng-disabled="form.$invalid">Sign up</button>
-	</form>
-	<pre> form = {{player | json}}</pre>
+<div class="loginForm">
+	<h2> Please fill out the following field</h2>
+		<form name="form" novalidate>
+			Username: <input type="text" ng-model="player.username" name="username" required/>
+			</br>
+			Email: <input type="email" ng-model="player.email" name="email" required/></br>
+			password: <input type="password" ng-model="player.password" name="password"/></br>
+			<button ng-click="save()" ng-disabled="form.$invalid">Sign up</button>
+		</form>
+		<pre> form = {{player | json}}</pre>
+</div>
