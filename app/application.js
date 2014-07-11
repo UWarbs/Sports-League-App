@@ -10,13 +10,14 @@ var mainApp = angular.module('mainApp', ['ngRoute', 'base64', 'ngCookies']);
 //====CONTROLLERS=====
 require('./modules/login/LoginCtrl')(mainApp);
 require('./modules/login/SignupCtrl')(mainApp);
+require('./modules/dashboard/dashboardCtrl')(mainApp);
 
 
 mainApp.config(['$routeProvider', 
 	function($routeProvider){
 		$routeProvider
 			.when('/',{
-				templateUrl: 'templates/index.html'
+				templateUrl: 'templates/landing.html'
 			})
 			.when('/login', {
 				templateUrl: 'templates/login.html',

@@ -7,9 +7,9 @@ module.exports = function(mainApp){
     $scope.player = {};
 
   	$scope.login = function(){
-  	  
+  	  console.log($base64.encode($scope.player.email + ':'+ $scope.player.password));
       $http.defaults.headers.common.Authorization = 
-      'Basic ' + $base64.encode($scope.user.email + ':' + $scope.user.password);
+      'Basic ' + $base64.encode($scope.player.email + ':' + $scope.player.password);
      
 			$http.get('/api/players')
        	.success(function (data) {
@@ -17,6 +17,7 @@ module.exports = function(mainApp){
             $cookies.jwt_token = data.jwt_token;
             $location.path('/dashboard');
           } else {
+            console.log('failed login');
             $scope.failedLogin = 'Incorrect username/password combination';
             //$scope.user.email = null;
             //$scope.user.password = null;
@@ -24,8 +25,6 @@ module.exports = function(mainApp){
           }).error(function (data) {
               console.log('err', data);
           });
-
-      
-  	};
+    };
   }]);
 };

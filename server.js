@@ -37,15 +37,6 @@ var redisSession = session({
 app.use(redisSession);
 //==================
 
-app.set('port', process.env.PORT || 3000);
-//app.post('/api/v1/add-user', file);
-//app.post('/api/v1/add-game', file);
-app.get('./api/match-history/:username', pongRoutes.matchHistory);
-require('./api/routes/playerCreate')(app); //Player creater
-require('./api/routes/standingsRoute')(app); //Shows standings
-require('./api/routes/addLeague')(app);//adds league to player account
-
-
 //JWT AUTH
 var jwtauth = require('./api/lib/jwtAuth')(app);
 app.set('jwtTokenSecret', process.env.JWT_SECRET || 'changeme-CHANGEME');
@@ -54,6 +45,19 @@ app.set('jwtTokenSecret', process.env.JWT_SECRET || 'changeme-CHANGEME');
 //PASSPORT
 app.use(passport.initialize());
 require('./api/lib/passport')(passport);
+
+app.set('port', process.env.PORT || 3000);
+
+
+//app.post('/api/v1/add-user', file);
+//app.post('/api/v1/add-game', file);
+app.get('./api/match-history/:username', pongRoutes.matchHistory);
+require('./api/routes/playerCreate')(app, passport, jwtauth.auth); //Player creater
+require('./api/routes/standingsRoute')(app); //Shows standings
+require('./api/routes/addLeague')(app);//adds league to player account
+
+
+
 
 var server = http.createServer(app);
 

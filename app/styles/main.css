@@ -33,6 +33,11 @@ header {
 	margin-left: 10%;
 }
 
+.loginForm{
+text-align: center;
+margin-top: 105px;
+}
+
 .signupForm input.ng-invalid.ng-dirty {
     background-color: #FA787E;
 }

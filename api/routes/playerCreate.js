@@ -1,7 +1,7 @@
 var Player = require('../models/player.js');
 var passport = require('passport');
 
-module.exports = function(app){
+module.exports = function(app, passport, jwtauth){
 	app.post('/api/add-user', function(req, res){
 		Player.findOne({'basic.email': req.body.email}, function(err, user){
 			if(err){
@@ -19,7 +19,7 @@ module.exports = function(app){
 			newUser.leagues = [];
 	
 			newUser.save(function(err, resNewUser){
-				if(err){return res.send(500, 'Error adding player' + err);}
+				if(err){return res.send(500, 'Error adding User' + err);}
 				res.json({'jwt_token': resNewUser.createToken(app)});
 			});
 		});
@@ -34,4 +34,7 @@ module.exports = function(app){
             res.json({'jwt_token': req.user.createToken(app)});
         }
     );
+	app.get('/api/players/data', jwtauth, function (req, res) {
+      res.send(req.user);
+    });
 };
