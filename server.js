@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var RedisStore = require('connect-redis')(session);
+var passport = require('passport');
 
 var pongRoutes = require('./api/routes/matchHistory');
 
@@ -45,10 +46,14 @@ require('./api/routes/standingsRoute')(app); //Shows standings
 require('./api/routes/addLeague')(app);//adds league to player account
 
 
+//JWT AUTH
+var jwtauth = require('./api/lib/jwtAuth')(app);
+app.set('jwtTokenSecret', process.env.JWT_SECRET || 'changeme-CHANGEME');
 
-//app.get('/api/v1/:name', players.playerData);
 
-
+//PASSPORT
+app.use(passport.initialize());
+require('./api/lib/passport')(passport);
 
 var server = http.createServer(app);
 

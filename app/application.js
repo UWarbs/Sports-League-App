@@ -9,22 +9,29 @@ var mainApp = angular.module('mainApp', ['ngRoute', 'base64', 'ngCookies']);
 
 //====CONTROLLERS=====
 require('./modules/login/LoginCtrl')(mainApp);
+require('./modules/login/SignupCtrl')(mainApp);
 
 
 mainApp.config(['$routeProvider', 
 	function($routeProvider){
 		$routeProvider
 			.when('/',{
-				templateUrl: 'templates/landing.html',
+				templateUrl: 'templates/landing.html'
+			})
+			.when('/login', {
+				templateUrl: 'templates/login.html',
 				controller: 'LoginCtrl'
 			})
-			.when('/signup'.{
+			.when('/signup',{
 				templateUrl: 'templates/signup.html',
 				controller: 'SignupCtrl'
 			})
 			.when('/standings', {
 				templateUrl:'templates/standingAll.html',
 				controller: 'StandingsDisplayCtrl'
+			})
+			.when('/dashboard',{
+				templateUrl: 'templates/dashboard.html'
 			});
 	}
 ]);
@@ -101,5 +108,3 @@ mainApp.config(['$routeProvider',
 
 
 
-//when updating wins/losses, need to do a db.players.update({name: "playerName"}, {$inc: {wins: 1}})
-//automatically creates "win" field in database if none exists

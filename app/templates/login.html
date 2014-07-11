@@ -1,0 +1,8 @@
+<h2> Please fill out the following field</h2>
+	<form class="loginForm" name="form" novalidate>
+		Email: <input type="email" ng-model="player.email" name="email" required/></br>
+		Password: <input type="password" ng-model="player.password" name="password" required/></br>
+		<button ng-click="login()">Log In</button>
+	</form>
+	<p> {{failedLogin}}</p>
+	<pre> form = {{player | json}}</pre>

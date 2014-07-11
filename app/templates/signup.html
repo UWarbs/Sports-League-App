@@ -1,17 +1,9 @@
 <h2> Please fill out the following field</h2>
-<div>
 	<form class="signupForm" name="form" novalidate>
-		Field Name: <input type="text" ng-model="field.name" name="fName" required/>
-		<span class="nameFieldPlease"ng-show="form.fName.$invalid">*Please name your field
-    </span></br>
-		Email: <input type="email" ng-model="field.email" name="fEmail" required/></br>
-		Crop Type: <input type="radio" ng-model="field.type" value="corn" name="fType"/> Corn
-		<input type="radio" ng-model="field.type" value="rice" name="fType" required/> Rice
-		<span class="nameFieldPlease"ng-show="form.fType.$invalid">  *Please select crop type
-    </span></br>
-		<button ng-click="reset()">RESET</button>
-		<button ng-click="update(field)" ng-disabled="form.$invalid">SAVE</button>
+		Username: <input type="text" ng-model="player.username" name="username" required/>
+		</br>
+		Email: <input type="email" ng-model="player.email" name="email" required/></br>
+		password: <input type="password" ng-model="player.password" name="password"/></br>
+		<button ng-click="save()" ng-disabled="form.$invalid">Sign up</button>
 	</form>
-	<pre> form = {{field | json}}</pre>
-	<pre> master = {{master | json}}</pre>
-</div>
+	<pre> form = {{player | json}}</pre>

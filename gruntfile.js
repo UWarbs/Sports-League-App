@@ -15,10 +15,17 @@ module.exports = function (grunt) {
                 files:[{
                     expand: true,
                     cwd: 'app/',
-                    src: ['css/*.css', '*.html'],
+                    src: ['*.html'],
                     dest: 'dist/',
                     flatten: true,
                     filter: 'isFile'
+                    },
+                    {
+                    expand:true,
+                    flatten: true,
+                    cwd:'app/',
+                    src:['styles/*'],
+                    dest:'dist/styles'
                     },
                     {
                     expand: true,
