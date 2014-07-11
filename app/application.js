@@ -16,7 +16,7 @@ mainApp.config(['$routeProvider',
 	function($routeProvider){
 		$routeProvider
 			.when('/',{
-				templateUrl: 'templates/landing.html'
+				templateUrl: 'templates/index.html'
 			})
 			.when('/login', {
 				templateUrl: 'templates/login.html',

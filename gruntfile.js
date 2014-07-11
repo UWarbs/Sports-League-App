@@ -62,7 +62,7 @@ module.exports = function (grunt) {
             },
 
             html: {
-                files: ['app/*.html', 'app/*.css'],
+                files: ['app/*.html', 'app/styles/*.css'],
                 tasks: ['copy']
             },
 

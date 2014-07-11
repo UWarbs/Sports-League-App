@@ -6,10 +6,36 @@ table {
 	cellpadding: 3; 
 	cellspacing: 3;
 }
-  .signupForm input.ng-invalid.ng-dirty {
-    background-color: #FA787E;
-  }
+body{
+	font-size: 16px;
+}
 
-  .signupForm input.ng-valid.ng-dirty {
+a{
+	text-decoration: none;
+	color: #69caa3;
+}
+
+h3{
+	text-align: right;
+	margin-top: -60px;
+}
+
+header {
+	height: 5.625em;
+	background-position-y: -25em;
+	display: block;
+	text-align: center;
+	background-color: #162c4b;
+	color: #f4f2c2;	
+	width: 960px;
+	position: fixed;
+	top: 0px;
+	margin-left: 10%;
+}
+
+.signupForm input.ng-invalid.ng-dirty {
+    background-color: #FA787E;
+}
+
+.signupForm input.ng-valid.ng-dirty {
     background-color: #78FA89;
-  }
