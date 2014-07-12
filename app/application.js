@@ -11,6 +11,7 @@ var mainApp = angular.module('mainApp', ['ngRoute', 'base64', 'ngCookies']);
 require('./modules/login/LoginCtrl')(mainApp);
 require('./modules/login/SignupCtrl')(mainApp);
 require('./modules/dashboard/dashboardCtrl')(mainApp);
+require('./headerCtrl')(mainApp);
 
 
 mainApp.config(['$routeProvider', 
@@ -32,7 +33,8 @@ mainApp.config(['$routeProvider',
 				controller: 'StandingsDisplayCtrl'
 			})
 			.when('/dashboard',{
-				templateUrl: 'templates/dashboard.html'
+				templateUrl: 'templates/dashboard.html',
+				controller: 'DashboardCtrl'
 			});
 	}
 ]);
