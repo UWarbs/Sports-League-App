@@ -34,7 +34,7 @@ module.exports = function(app, passport, jwtauth){
             res.json({'jwt_token': req.user.createToken(app)});
         }
     );
-	app.get('/api/players/data', jwtauth, function (req, res) {
-      res.send(req.user);
+	app.get('/api/player/data', jwtauth, function (req, res) {
+      res.send(req.player);
     });
 };
