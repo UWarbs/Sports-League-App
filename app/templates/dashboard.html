@@ -1,3 +1,13 @@
-<h1> Auth worked!!??</h1>
-<p>Hello {{player.username}}</p>
-<p>Your email is {{player.basic.email}}</p>
+<div class="dashSidebar">
+	<h2> Leagues</h2><br>
+	<input type="button" ng-click="addLeague()"> Add League</input>
+	<div class="sidebarLeague" ng-repeat="league in leagues"></div>
+</div>
+<div class="dashboardMid" ng-hide="hideMid">
+	<p>Hello {{player.username}}</p>
+	<p>Your email is {{player.basic.email}}</p>
+	<p>Your leagues are</p>
+</div>
+
+<!--use this to determine what view goes in the middle of the page-->
+<div ng-include="rightSideUrl"></div>

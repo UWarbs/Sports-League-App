@@ -36,6 +36,7 @@ mainApp.config(['$routeProvider',
 				templateUrl: 'templates/dashboard.html',
 				controller: 'DashboardCtrl'
 			});
+
 	}
 ]);
 	

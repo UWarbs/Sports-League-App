@@ -33,6 +33,29 @@ header {
 	margin-left: 10%;
 }
 
+.addLeague{
+	width:30em;
+  height:18em;
+  margin-top: 8em; /*set to a negative number 1/2 of height*/
+  margin-left: 22em; 
+  border: 1px solid #ccc;
+  background-color: #f3f3f3;
+}
+.dashboardMid{
+	width:30em;
+  height:18em;
+  margin-top: 8em; /*set to a negative number 1/2 of height*/
+  margin-left: 22em; 
+  border: 1px solid #ccc;
+  background-color: #f3f3f3;
+}
+.dashSidebar{
+  position: fixed;
+  left: 0; /* or right */
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+}
 .loginForm{
 text-align: center;
 margin-top: 105px;
