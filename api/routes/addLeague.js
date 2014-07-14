@@ -1,6 +1,6 @@
-var Player = require('../models/player.js');	
-module.exports = function(app){
-	app.post('/api/leagues', function(req, res){
+var Player = require('../models/player.js');
+module.exports = function(app, jwtauth){
+	app.post('/api/leagues', jwtauth, function(req, res){
 		var newLeague = req.body;
 
     req.player.leagues.push(newLeague);

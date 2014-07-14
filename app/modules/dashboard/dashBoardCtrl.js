@@ -1,4 +1,5 @@
 var getPlayerData = require('../../getPlayerData');
+var postNewLeague = require('../../postNewLeague');
 
 module.exports = function(mainApp){
   mainApp.controller('DashboardCtrl', [ '$scope', '$cookies', '$http', '$base64', '$location',
@@ -26,16 +27,18 @@ module.exports = function(mainApp){
     }
     
     //=====ADDING NEW LEAGUES
+    $scope.newLeague = {};
     $scope.addLeague = function(){
       $scope.hideMid = true;
       $scope.rightSideUrl = '/templates/addLeague.html';
     };
 
-    $scope.saveLeague = function(name){
-      //POST request to add to database
-      var player = $scope.player;
-      player.leagues.push({leagueName: name, wins: 0, losses: 0});
-      console.log(player);
+    $scope.saveLeague = function(){
+      postNewLeague($http, $scope.newLeague, function(newPlayerDoc) {
+      
+      setPlayer(newPlayerDoc);
+      $scope.newLeague = {};
+      });
     };
 
 

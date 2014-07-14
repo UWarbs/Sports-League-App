@@ -54,7 +54,7 @@ app.set('port', process.env.PORT || 3000);
 app.get('./api/match-history/:username', pongRoutes.matchHistory);
 require('./api/routes/playerCreate')(app, passport, jwtauth.auth); //Player creater
 require('./api/routes/standingsRoute')(app); //Shows standings
-require('./api/routes/addLeague')(app);//adds league to player account
+require('./api/routes/addLeague')(app, jwtauth.auth);//adds league to player account
 
 
 

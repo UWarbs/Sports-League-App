@@ -12,7 +12,8 @@ var playerSchema = new mongoose.Schema({
 	leagues: [{
 		leagueName: String,
 		wins: Number,
-		losses: Number
+		losses: Number,
+		startDate: Date
 	}]
 });
 

@@ -1,7 +1,9 @@
 <div class="dashSidebar">
-	<h2> Leagues</h2><br>
-	<input type="button" ng-click="addLeague()"> Add League</input>
-	<div class="sidebarLeague" ng-repeat="league in leagues"></div>
+	<h2>Leagues</h2><br>
+	<input type="button" ng-click="addLeague()"> Add League</input><br>
+	<div class="sidebarLeague" ng-repeat="league in player.leagues">
+  <h3>{{league.leagueName}}</h3>
+	</div>
 </div>
 <div class="dashboardMid" ng-hide="hideMid">
 	<p>Hello {{player.username}}</p>
