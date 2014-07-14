@@ -2,21 +2,34 @@
 <html ng-app="mainApp">
 <head>
 	<title>Ping Pong</title>
-	<link rel="stylesheet" type="text/css" href="styles/main.css">
-	<script type="text/javascript" src="client.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+	<link rel="stylesheet" href="styles/bootstrap-responsive.css">
+	
 </head>
-<body> <!-- I am thinking of having the header and footer and ng-hidden sidebar here-->
-	<header ng-controller="HeaderCtrl"> 
-		<h1><a href="#">Sports League App</a></h1> 
-			<h3>
-			<span><a href="#/signup">Sign up</a><br>
-			<a href="#/login">Log In</a><br>
-			<a ng-click="logout()" href ="#/login" >Log Out</a>
-			</span>
-			</h3>
-	</header>
-	<div ng-view></div>
-
-
+<body>
+<div class="container">	
+	<div class="navbar navbar-fixed-top">
+	  <div class="navbar-inner">
+	    <div class="container">
+	     	<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-th-list"></span></a>
+        <a href="#" class="brand">Sports League App</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav pull-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+          </ul>
+        </div>
+	  	</div>
+		</div>
+	</div>
+<div ng-view></div>
+</div>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="client.js"></script>
 </body>
 </html>
