@@ -24,8 +24,22 @@ module.exports = function (grunt) {
                     expand:true,
                     flatten: true,
                     cwd:'app/',
-                    src:['styles/*'],
+                    src:['bootstrap/css/*'],
                     dest:'dist/styles'
+                    },
+                    {
+                    expand:true,
+                    flatten: true,
+                    cwd:'app/',
+                    src:['bootstrap/js/*'],
+                    dest:'dist/js'
+                    },
+                    {
+                    expand:true,
+                    flatten: true,
+                    cwd:'app/',
+                    src:['bootstrap/img/*'],
+                    dest:'dist/img'
                     },
                     {
                     expand: true,
@@ -91,7 +105,7 @@ module.exports = function (grunt) {
           options: {
             jshintrc: true
         },
-        all: ['server.js', 'app/**/*.js']
+        all: ['server.js', 'app/*.js', 'app/modules/**/*.js']
     },
 
     express: {

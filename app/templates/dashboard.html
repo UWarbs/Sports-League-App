@@ -1,15 +1,18 @@
-<div class="dashSidebar">
-	<h2>Leagues</h2><br>
-	<input type="button" ng-click="addLeague()"> Add League</input><br>
-	<div class="sidebarLeague" ng-repeat="league in player.leagues">
-  <h3>{{league.leagueName}}</h3>
+<div navbar class="navbar navbar-fixed-left">
+	<div class="span3 well">
+    <ul class="nav nav-list">
+    <h1>Your Leagues</h1>
+    		<button class="btn btn-success" ng-click="addLeague()">Add League</button>
+        <div ng-repeat="league in player.leagues">
+        	<h3>{{league.leagueName}}</h3>
+        	<h5>Wins: {{league.wins}}</h5>
+        	<h5>Losses: {{league.losses}}</h5>
+        	<li class="divider"></li>
+        </div>
+    </ul>
 	</div>
 </div>
-<div class="dashboardMid" ng-hide="hideMid">
-	<p>Hello {{player.username}}</p>
-	<p>Your email is {{player.basic.email}}</p>
-	<p>Your leagues are</p>
-</div>
-
-<!--use this to determine what view goes in the middle of the page-->
+<!--use this to determine what view goes in the middle of the page -->
 <div ng-include="rightSideUrl"></div>
+
+

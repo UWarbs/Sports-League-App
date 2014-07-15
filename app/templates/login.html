@@ -1,10 +1,31 @@
-<div class="loginForm">
-	<h2> Please fill out the following field</h2>
-		<form name="form" novalidate>
-			Email: <input type="email" ng-model="player.email" name="email" required/></br>
-			Password: <input type="password" ng-model="player.password" name="password" required	/></br>
-			<button ng-click="login()">Log In</button>
-		</form>
-		<p> {{failedLogin}}</p>
-		<pre> form = {{player | json}}</pre>
+<div class="row">
+<div class="span12">
+	<form class="form-horizontal" action='' method="POST" novalidate>
+		<fieldset>
+			<div id="legend">
+			  <legend class="">Login</legend>
+			</div>
+			  <div class="control-group">
+			    <!-- Username -->
+			    <label class="control-label"  for="username">Email</label>
+			    <div class="controls">
+			      <input type="email" id="username" name="username" placeholder="example@example.com" class="input-xlarge" ng-model="player.email" required>
+			    </div>
+			  </div>
+			  <div class="control-group">
+			    <!-- Password-->
+			    <label class="control-label" for="password">Password</label>
+			    <div class="controls">
+			      <input type="password" id="password" name="password" class="input-xlarge" ng-model="player.password" required>
+			    </div>
+			  </div>
+			  <div class="control-group">
+			      <!-- Button -->
+			    <div class="controls">
+			      <button class="btn btn-success" ng-click="login()">Login</button>
+			    </div>
+			  </div>
+		</fieldset>
+	</form>
+</div>
 </div>

@@ -29,7 +29,7 @@ module.exports = function(mainApp){
     //=====ADDING NEW LEAGUES
     $scope.newLeague = {};
     $scope.addLeague = function(){
-      $scope.hideMid = true;
+      console.log('$scope.rightSideUrl');
       $scope.rightSideUrl = '/templates/addLeague.html';
     };
 
