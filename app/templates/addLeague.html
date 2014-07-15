@@ -1,13 +1,12 @@
-<div class="span7">
+<div class="span7" controller="AddLeagueCtrl">
 <div class="hero-unit">
   <form class="addLeague">
 		League Name: 
-		<input type="text" placeholder="league name" ng-model="newLeague.leagueName"/>
-		<button ng-click="saveLeague()">Save</button>
+		<input type="text" placeholder="league name" ng-model="newLeague.leagueName"/><br>
+		Owner:
+		<input type="text" placeholder="example@example.com" ng-model="newLeague.owner"/>
+		<a href="#/dashboard"><button class="btn btn-success" ng-click="saveLeague()">Save</button></a>
 		<p> hello {{player.username}}</p>
 </form>
 </div>
 </div>
-<!--
-
--->

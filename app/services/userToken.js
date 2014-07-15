@@ -1,14 +1,9 @@
-var getPlayerData = require('../../getPlayerData');
-var postNewLeague = require('../../postNewLeague');
+/*var getPlayerData = require('../getPlayerData');
 
 module.exports = function(mainApp){
-  mainApp.controller('DashboardCtrl', [ '$scope', '$cookies', '$http', '$base64', '$location',
+  mainApp.factory('token', [ '$scope', '$cookies', '$http', '$base64', '$location',
                       function ($scope, $cookies, $http, $base64, $location) {
-	  //======SET VIEW=====
-    $scope.rightSideUrl = '';
-    
-    //======COOKIE/USER STUFF======
-    //send user to login page if no token
+
     if (!$cookies.jwt_token){
         $location.path('/login');
     }
@@ -25,5 +20,6 @@ module.exports = function(mainApp){
     function setPlayer(playerDoc){
       $scope.player = playerDoc;
     }
+
   }]);
-};
+}*/

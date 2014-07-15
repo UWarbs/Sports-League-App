@@ -2,8 +2,6 @@ require('angular');
 require('angular-route');
 require('angular-cookies');
 require('angular-base64');
-var standing = require('./modules/standings/standings-module.js');
-
 
 var mainApp = angular.module('mainApp', ['ngRoute', 'base64', 'ngCookies']); 
 
@@ -12,7 +10,9 @@ require('./modules/login/LoginCtrl')(mainApp);
 require('./modules/login/SignupCtrl')(mainApp);
 require('./modules/dashboard/dashboardCtrl')(mainApp);
 require('./headerCtrl')(mainApp);
+require('./modules/league/addLeagueCtrl')(mainApp);
 
+//====SERVICES=====
 
 mainApp.config(['$routeProvider', 
 	function($routeProvider){
@@ -35,6 +35,10 @@ mainApp.config(['$routeProvider',
 			.when('/dashboard',{
 				templateUrl: 'templates/dashboard.html',
 				controller: 'DashboardCtrl'
+			})
+			.when('/add-league', {
+				templateUrl: 'templates/addLeague.html',
+				controller: 'AddLeagueCtrl'
 			});
 
 	}
@@ -42,7 +46,7 @@ mainApp.config(['$routeProvider',
 	
 
 
-
+//Might be useful some day
 	/*app.service('PlayerService', function(){
 		var uId = 1;
 		var players = [{

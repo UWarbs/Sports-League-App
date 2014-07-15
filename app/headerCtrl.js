@@ -7,6 +7,7 @@
     $scope.logout = function () {
       delete $cookies.jwt_token;
       $location.path('/#');
+      $scope.logged = false;
     };
 
     //all requests should send token
