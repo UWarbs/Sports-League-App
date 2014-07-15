@@ -1,11 +1,39 @@
-<div class="loginForm">
-	<h2> Please fill out the following field</h2>
-		<form name="form" novalidate>
-			Username: <input type="text" ng-model="player.username" name="username" required/>
-			</br>
-			Email: <input type="email" ng-model="player.email" name="email" required/></br>
-			password: <input type="password" ng-model="player.password" name="password"/></br>
-			<button ng-click="save()" ng-disabled="form.$invalid">Sign up</button>
-		</form>
-		<pre> form = {{player | json}}</pre>
+<div class="row">
+<div class="span12">
+	<form class="form-horizontal" action='' method="POST" novalidate>
+		<fieldset>
+			<div id="legend">
+			  <legend class="">Sign up</legend>
+			</div>
+			 <div class="control-group">
+			    <!-- Username -->
+			    <label class="control-label"  for="name">Name</label>
+			    <div class="controls">
+			      <input type="text" id="name" name="name" placeholder="Bill" class="input-xlarge" ng-model="player.username" required>
+			    </div>
+			  </div>
+			  <div class="control-group">
+			    <!-- Username -->
+			    <label class="control-label"  for="username">Email</label>
+			    <div class="controls">
+			      <input type="email" id="username" name="username" placeholder="example@example.com" class="input-xlarge" ng-model="player.email" required>
+			    </div>
+			  </div>
+			  <div class="control-group">
+			    <!-- Password-->
+			    <label class="control-label" for="password">Password</label>
+			    <div class="controls">
+			      <input type="password" id="password" name="password" class="input-xlarge" ng-model="player.password" required>
+			    </div>
+			  </div>
+			  <div class="control-group">
+			      <!-- Button -->
+			    <div class="controls">
+			      <button class="btn btn-success" ng-click="save()" ng-disabled="form.$invalid">Sign up</button>
+			    </div>
+			  </div>
+		</fieldset>
+	</form>
 </div>
+</div>
+
