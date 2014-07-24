@@ -39,6 +39,10 @@ mainApp.config(['$routeProvider',
 			.when('/add-league', {
 				templateUrl: 'templates/addLeague.html',
 				controller: 'AddLeagueCtrl'
+			})
+			.when('/standing-view', {
+				templateUrl: 'templates/standingView.html',
+				controller: 'LeagueCtrl'
 			});
 
 	}

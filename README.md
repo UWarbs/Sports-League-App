@@ -14,3 +14,13 @@ A user will be able to login and add a league, see his leagues, see standings an
 An admin user will be able to use the 'game' form to add games that have been played which will update standings and individual player stats.
 
 ##It is in the very early stages right now.
+A web app to help you see how different habits, behaviors and external factors affect you.
+
+## Development
+
+Backend                                         |Front-end                              |Testing  | Development tools
+----------------------------------------------------|-----------------------------------|---------|--------
+[Mongodb](http://docs.mongodb.org/manual/)        |[Angular](https://docs.angularjs.org/api) |[Mocha](http://visionmedia.github.io/mocha/#table-of-contents) | [Grunt](http://gruntjs.com)
+[Mongoose](http://mongoosejs.com/docs/guide.html) | [Chai](http://chaijs.com/api/bdd/) | [Browserify](https://github.com/substack/node-browserify#usage)
+[Node.js](http://nodejs.org/api/) | [D3](https://github.com/mbostock/d3/wiki) (data visualization) | [Karma](http://karma-runner.github.io/0.12/index.html) & [karma-browserify](https://github.com/xdissent/karma-browserify) | [Bower](http://bower.io/) & [debowerify](https://www.npmjs.org/package/debowerify)
+[Express](http://expressjs.com/4x/api.html) | [Protractor](https://github.com/angular/protractor) |

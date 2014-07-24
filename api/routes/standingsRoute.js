@@ -1,5 +1,8 @@
 var Player = require('../models/player.js');
 
+
+// /api/standing-view/:league
+// GET request for the selected league
 module.exports = function(app) {
 	app.get('/api/standings', function(req, res){
 		console.log(req);

@@ -1,18 +1,19 @@
 <div navbar class="navbar navbar-fixed-left">
-	<div class="span3 well">
-    <ul class="nav nav-list">
-    <h1>Your Leagues</h1>
-    		<a href="#/add-league"><button class="btn btn-success">Add League</button></a>
-        <div ng-repeat="league in player.leagues">
-        <!-- I think table is best here -->
-        	<h3>{{league.leagueName}}</h3>
-        	<p>Wins: {{league.wins}}</p>
-        	<p>Losses: {{league.losses}}</p>
-
-        	<li class="divider"></li>
-        </div>
-    </ul>
-	</div>
+  <div class="span3 well">
+  <ul class="nav nav-list">
+  <h1>Your Leagues</h1>
+  <a href="#/add-league"><button class="btn btn-success">Add League</button></a> 
+    <a href="#/standing-view"> 
+      <div ng-repeat="league in player.leagues">
+      <!-- I think table is best here -->
+      	<h3>{{league.leagueName}}</h3>
+      	<p>Wins: {{league.wins}}</p>
+      	<p>Losses: {{league.losses}}</p>  
+      	<li class="divider"></li>
+      </div>
+    </a>
+  </ul>
+  </div>
 </div>
 <!--use this to determine what view goes in the middle of the page -->
 <div ng-include="rightSideUrl"></div>
