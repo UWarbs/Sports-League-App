@@ -13,9 +13,6 @@ A user will be able to login and add a league, see his leagues, see standings an
 
 An admin user will be able to use the 'game' form to add games that have been played which will update standings and individual player stats.
 
-##It is in the very early stages right now.
-A web app to help you see how different habits, behaviors and external factors affect you.
-
 ## Development
 
 Backend                                         |Front-end                              |Testing  | Development tools
