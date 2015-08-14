@@ -18,6 +18,6 @@ An admin user will be able to use the 'game' form to add games that have been pl
 Backend                                         |Front-end                              |Testing  | Development tools
 ----------------------------------------------------|-----------------------------------|---------|--------
 [Mongodb](http://docs.mongodb.org/manual/)        |[Angular](https://docs.angularjs.org/api) |[Mocha](http://visionmedia.github.io/mocha/#table-of-contents)/[Chai](http://chaijs.com/api/bdd/) | [Grunt](http://gruntjs.com)
-[Mongoose](http://mongoosejs.com/docs/guide.html) |  | [Browserify](https://github.com/substack/node-browserify#usage)
+[Mongoose](http://mongoosejs.com/docs/guide.html)
 [Node.js](http://nodejs.org/api/) | [D3](https://github.com/mbostock/d3/wiki) (data visualization) | [Karma](http://karma-runner.github.io/0.12/index.html) & [karma-browserify](https://github.com/xdissent/karma-browserify) | [Bower](http://bower.io/) & [debowerify](https://www.npmjs.org/package/debowerify)
 [Express](http://expressjs.com/4x/api.html) | [Protractor](https://github.com/angular/protractor) |
